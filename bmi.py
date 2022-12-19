@@ -2,16 +2,16 @@ from tkinter import *
 from tkinter import messagebox
 
 
-#def reset():
-    #height.delete(0, 'end')
-    #weight.delete(0, 'end')
+# def reset():
+# height.delete(0, 'end')
+# weight.delete(0, 'end')
 
 
 def bmi_cal():
     kg = int(weight.get())
-    m = int(height.get())
+    m = int(height.get()) / 100
     bmi = kg / m ** 2
-    bmi = round(bmi, 1)
+    #bmi = round(bmi, 1)
     bmi_index(bmi)
 
 
@@ -26,6 +26,7 @@ def bmi_index(bmi):
         messagebox.showinfo('BMI', f'BMI = {bmi} is Obesity')
     else:
         messagebox.showerror('BMI', 'something went wrong!')
+
 
 root = Tk()
 root.title("BMI Calculator")
@@ -53,4 +54,14 @@ weight_label.grid(row=4, column=1)
 
 height = Entry(frame)
 height.grid(row=3, column=2, pady=5)
+weight = Entry(frame)
+weight.grid(row=4, column=2, pady=5)
+
+frame3 = Frame(frame)
+frame3.grid(row=5, column=3, pady=10)
+
+calculate_b = Button(frame3, text="Calculate", command=bmi_cal)
+calculate_b.pack(side=LEFT)
+
+
 root.mainloop()

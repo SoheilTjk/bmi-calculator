@@ -11,7 +11,7 @@ def bmi_cal():
     kg = int(weight.get())
     m = int(height.get()) / 100
     bmi = kg / m ** 2
-    #bmi = round(bmi, 1)
+    bmi = round(bmi, 1)
     bmi_index_over18(bmi)
 
 

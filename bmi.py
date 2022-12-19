@@ -12,10 +12,10 @@ def bmi_cal():
     m = int(height.get()) / 100
     bmi = kg / m ** 2
     #bmi = round(bmi, 1)
-    bmi_index(bmi)
+    bmi_index_over18(bmi)
 
 
-def bmi_index(bmi):
+def bmi_index_over18(bmi):
     if bmi < 18.5:
         messagebox.showinfo('BMI', f'BMI = {bmi} is Underweight')
     elif (bmi > 18.5) and (bmi < 24.9):
@@ -36,16 +36,17 @@ var = IntVar()
 frame = Frame(root, padx=10, pady=10)
 frame.pack(expand=True)
 
-sex = Label(frame, text="Select Your Gender:")
-sex.grid(row=2, column=1)
+age = Label(frame, text="Select Your Age Range:", fg='red')
+age.grid(row=2, column=1)
+
 
 frame2 = Frame(frame)
 frame2.grid(row=2, column=2, pady=10)
 
-male = Radiobutton(frame2, text="Male", variable=var, value=1)
-male.pack(side=RIGHT)
-female = Radiobutton(frame2, text="Female", variable=var, value=0)
-female.pack(side=LEFT)
+under18 = Radiobutton(frame2, text="Under 18 years (soon)", variable=var, value=1, state=DISABLED)
+under18.pack(side=RIGHT)
+over18 = Radiobutton(frame2, text="Over 18 years", variable=var, value=0)
+over18.pack(side=LEFT)
 
 height_label = Label(frame, text="Enter your Height in CM:")
 height_label.grid(row=3, column=1)

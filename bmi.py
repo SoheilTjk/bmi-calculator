@@ -2,9 +2,9 @@ from tkinter import *
 from tkinter import messagebox
 
 
-# def reset():
-# height.delete(0, 'end')
-# weight.delete(0, 'end')
+def reset():
+ height.delete(0, 'end')
+ weight.delete(0, 'end')
 
 
 def bmi_cal():
@@ -64,5 +64,7 @@ frame3.grid(row=5, column=3, pady=10)
 calculate_b = Button(frame3, text="Calculate", command=bmi_cal)
 calculate_b.pack(side=LEFT)
 
+reset_b = Button(frame3, text="Reset", command=reset)
+reset_b.pack(side=RIGHT)
 
 root.mainloop()

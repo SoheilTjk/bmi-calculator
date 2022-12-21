@@ -3,8 +3,8 @@ from tkinter import messagebox
 
 
 def reset():
- height.delete(0, 'end')
- weight.delete(0, 'end')
+    height.delete(0, 'end')
+    weight.delete(0, 'end')
 
 
 def bmi_cal():
@@ -38,7 +38,6 @@ frame.pack(expand=True)
 
 age = Label(frame, text="Select Your Age Range:", fg='red')
 age.grid(row=2, column=1)
-
 
 frame2 = Frame(frame)
 frame2.grid(row=2, column=2, pady=10)

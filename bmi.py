@@ -27,6 +27,8 @@ def bmi_index_over18(bmi):
     else:
         messagebox.showerror('BMI', 'something went wrong!')
 
+def info():
+    messagebox.showinfo('Info', 'v1, you can calculate your bmi.')
 
 root = Tk()
 root.title("BMI Calculator")
@@ -65,5 +67,8 @@ calculate_b.pack(side=LEFT)
 
 reset_b = Button(frame3, text="Reset", command=reset)
 reset_b.pack(side=RIGHT)
+
+info_b = Button(frame3, text="info", command=info)
+info_b.pack(side=RIGHT)
 
 root.mainloop()
